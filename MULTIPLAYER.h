@@ -14,11 +14,11 @@ private:
     std::vector<PDGameV2> m_players;
     bool m_gameOver;
 public:
-    MultiPlayer(std::vector<PDGameV2> m_players);
+    MultiPlayer();
     void mpPlayGame();
 private:
     void checkForWinner();
-    void displayScoreBoard();
+    void displayScoreBoard() const;
 };
 
 

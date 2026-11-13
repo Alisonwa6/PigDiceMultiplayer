@@ -4,10 +4,10 @@
 PDGame::PDGame() {
     m_gameOver = false;
     m_gameScore = 0;
-    m_myTurn.setParentGame(this); // 7.
-    playGame();
+    //m_myTurn.setParentGame(this); // 7.
+    //playGame();
 }
-int PDGame::getGameScore() const { // 2.
+[[nodiscard]] int PDGame::getGameScore() const { // 2.
     return m_gameScore;
 }
 

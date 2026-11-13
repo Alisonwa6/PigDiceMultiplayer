@@ -9,13 +9,13 @@ Turn::Turn() {
     m_turnOver = false;
     m_choice = 't';
 }
-void Turn::setParentGame(PDGame *parentGame) { // 6.
+/*void Turn::setParentGame(PDGame *parentGame) { // 6.
     m_parentGame = parentGame;
-}
+}*/
 
 void Turn::takeTurn() {
     m_turnCount ++;
-    std::cout << "\nTURN " << getTurnCount() << " - Game Score: " << m_parentGame->getGameScore() << std::endl; // 9.
+    std::cout << " - TURN " << getTurnCount() << std::endl; // 9.
     while (!m_turnOver) {
         std::cout << "roll or hold? (r/h):  ";
         std::cin >> m_choice;
@@ -32,7 +32,7 @@ void Turn::takeTurn() {
     std::cout << "Score Banked This Turn: " << m_scoreThisTurn << std::endl;
 }
 
-int Turn::getScoreThisTurn() const{
+[[nodiscard]] int Turn::getScoreThisTurn() const{
     return m_scoreThisTurn;
 }
 
@@ -40,14 +40,12 @@ void Turn::resetTurnOver() {
     m_turnOver = false;
 }
 
-int Turn::getTurnCount() const {
+[[nodiscard]] int Turn::getTurnCount() const {
     return m_turnCount;
 }
 
 void Turn::resetScoreThisTurn() {
-    if (m_scoreThisTurn <= 20) {
         m_scoreThisTurn = 0;
-    }
 }
 
 void Turn::roll() {

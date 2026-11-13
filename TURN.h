@@ -1,5 +1,5 @@
-#ifndef PIGDICE_TURN_H
-#define PIGDICE_TURN_H
+#ifndef PIGDICEMULTIPLAYER_TURN_H
+#define PIGDICEMULTIPLAYER_TURN_H
 #include "DIE.h"
 //#include "PDGAME.h"
 
@@ -12,10 +12,10 @@ private:
     bool m_turnOver;
     char m_choice;
     Die m_myDie;
-    PDGame* m_parentGame = nullptr; // 4.
+    //PDGame* m_parentGame = nullptr; // 4.
 public:
     Turn();
-    void setParentGame(PDGame *parentGame); // 5.
+    //void setParentGame(PDGame *parentGame); // 5.
     void takeTurn();
     int getScoreThisTurn() const;
     void resetTurnOver();
@@ -24,3 +24,5 @@ public:
 private:
     void roll();
 };
+
+#endif //PIGDICEMULTIPLAYER_TURN_H
